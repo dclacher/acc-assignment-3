@@ -1,4 +1,4 @@
-package mst;
+package minimum_spanning_tree;
 
 import graphs.*;
 

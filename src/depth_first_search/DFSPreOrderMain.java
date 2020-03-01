@@ -1,25 +1,25 @@
-package dfs;
+package depth_first_search;
 
 import graphs.DepthFirstOrder;
 import graphs.Digraph;
 import graphs.In;
 import graphs.StdOut;
 
-public class DFSPostOrderMain {
+public class DFSPreOrderMain {
 
     public static void main(String[] args) {
         In in = new In("largeDG.txt");
         Digraph graph = new Digraph(in);
-        StdOut.println("PostOrder:  ");
+        StdOut.println("PreOrder:  ");
 
         // Starting the timer for CPU time
-        long startTimePostOrder = System.nanoTime();
+        long startTimePreOrder = System.nanoTime();
         // Run DFS on the graph
         DepthFirstOrder dfs = new DepthFirstOrder(graph);
-        // Show the vertices in post-order
-        for (int v : dfs.post()) {
+        // Show the vertices in pre-order
+        for (int v : dfs.pre()) {
             StdOut.println(v);
         }
-        StdOut.printf("CPU Time in Nanoseconds for PostOrder is %d", System.nanoTime() - startTimePostOrder);
+        StdOut.printf("CPU Time in Nanoseconds for PreOrder is %d", System.nanoTime() - startTimePreOrder);
     }
 }
