@@ -2,8 +2,6 @@
 .classpath
 .project
 .settings/
-largeDG.txt
-largeEWG.txt
-mediumDG.txt
-mediumEWG.txt
-movies.txt
+*.txt
+*.dat
+*.iml

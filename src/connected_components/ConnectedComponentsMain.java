@@ -57,6 +57,13 @@ public class ConnectedComponentsMain {
         // printConnectedComponentsInformation(graph, cc);
     }
 
+    /**
+     * Method that returns a list with the adjacent vertices for the source
+     * @param sg The graph with the actual values
+     * @param graph The converted graph (from String values to int values)
+     * @param source The string to be searched in the original graph (sg)
+     * @return a list with the adjacent vertices for the source
+     */
     private static List<String> printVertexConnections(SymbolGraph sg, Graph graph, String source) {
         List<String> result = new ArrayList<>();
         if (sg.contains(source)) {
