@@ -1,8 +1,8 @@
 package memory_management;
 
+import memoryManagement.StdOut;
 import memoryManagement.In;
 import memoryManagement.IndexMinPQ;
-import memoryManagement.StdOut;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -23,6 +23,7 @@ public class MultiwayMain {
             // Read the original file and copy it into a list
             List<String> result = Files.readAllLines(Paths.get("ChIP-seq-reads-1M.dat"), StandardCharsets.UTF_8);
             // Partition the list of reads into four sub-lists
+            long startTime = System.nanoTime();
             List<String> subListA = result.subList(0, 250000);
             List<String> subListB = result.subList(250000, 500000);
             List<String> subListC = result.subList(500000, 750000);
@@ -58,6 +59,7 @@ public class MultiwayMain {
             for (int i = 0; i < N; i++)
                 streams[i] = new In(fileNames[i]);
             merge(streams);
+            StdOut.printf("CPU Time in Nanoseconds is %d", System.nanoTime() - startTime);
         } catch (IOException e) {
             e.printStackTrace();
         }
